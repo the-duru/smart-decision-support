@@ -7,14 +7,24 @@ st.title("📊 Akıllı Karar Destek Sistemi")
 st.caption("KPI + Basit analiz (demo satış verisi)")
 
 # Veri oku
-df = pd.read_csv("../data/sales.csv")
-df["date"] = pd.to_datetime(df["date"])
-df["revenue"] = df["units"] * df["price"]
+import os
+
+# dosya yolunu güvenli şekilde oluştur
+base_dir = os.path.dirname(os.path.dirname(__file__))
+data_path = os.path.join(base_dir, "data", "train.csv")
+
+df = pd.read_csv(data_path)
+# kolon isimlerini küçük harfe çevir
+df.columns = df.columns.str.lower()
+
+df["date"] = pd.to_datetime(df["order date"], dayfirst=True)
+df["revenue"] = df["sales"]
+
 
 # Filtreler
 st.sidebar.header("Filtreler")
 regions = ["All"] + sorted(df["region"].unique().tolist())
-products = ["All"] + sorted(df["product"].unique().tolist())
+products = ["All"] + sorted(df["product name"].unique().tolist())
 
 selected_region = st.sidebar.selectbox("Bölge", regions)
 selected_product = st.sidebar.selectbox("Ürün", products)
@@ -23,13 +33,15 @@ fdf = df.copy()
 if selected_region != "All":
     fdf = fdf[fdf["region"] == selected_region]
 if selected_product != "All":
-    fdf = fdf[fdf["product"] == selected_product]
+    fdf = fdf[fdf["product name"] == selected_product]
+
 
 
 # KPI'lar
 total_revenue = fdf["revenue"].sum()
-total_units = fdf["units"].sum()
-best_product = fdf.groupby("product")["revenue"].sum().idxmax() if len(fdf) else "-"
+total_units = len(fdf)
+best_product = fdf.groupby("product name")["revenue"].sum().idxmax() if len(fdf) else "-"
+
 
 
 c1, c2, c3 = st.columns(3)
