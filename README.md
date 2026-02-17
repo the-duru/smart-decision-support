@@ -54,7 +54,8 @@ smart-decision-support/
 
 Clone the repository:
 
-git clone https://github.com/your-username/smart-decision-support.git  
+git clone https://github.com/the-duru/smart-decision-support.git
+
 cd smart-decision-support
 
 Create and activate environment (Anaconda recommended):
