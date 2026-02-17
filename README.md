@@ -1,8 +1,8 @@
 # Smart Decision Support System
 
-A mini decision support platform that analyzes historical sales data, computes key performance indicators (KPIs), and provides a simple revenue forecast through an interactive dashboard.
+A Python-based decision support system that analyzes sales data, computes key performance indicators (KPIs), and provides a simple revenue forecast through an interactive dashboard.
 
-This project demonstrates how raw business data can be transformed into actionable insights for management-level decision making.
+This project demonstrates how raw business data can be transformed into meaningful insights for decision-making.
 
 ---
 
@@ -10,19 +10,15 @@ This project demonstrates how raw business data can be transformed into actionab
 
 - KPI calculation (total revenue, best-selling product, etc.)
 - Region and product-based filtering
-- Interactive Streamlit dashboard
-- Baseline revenue forecasting using machine learning
-- Clean and modular Python project structure
+- Interactive dashboard built with Streamlit
+- Baseline revenue forecasting
+- Clean and modular project structure
 
 ---
 
 ## Dataset
 
-Dataset: Superstore Sales Dataset (Kaggle)  
-Type: Open retail dataset  
-Usage: Educational and portfolio purposes only  
-
-The dataset is used to simulate real-world business analytics scenarios.
+The project uses an open retail sales dataset from Kaggle for educational and portfolio purposes.
 
 ---
 
@@ -30,64 +26,32 @@ The dataset is used to simulate real-world business analytics scenarios.
 
 - Python
 - Pandas
-- NumPy
 - Scikit-learn
 - Streamlit
 
 ---
 
-## Project Structure
+## How to Run
 
-smart-decision-support/
-- app/
-  - dashboard.py
-- data/
-  - train.csv
-- src/
-  - kpi.py
-- README.md
-- requirements.txt
+1. Install the required libraries:
+   
+   pip install -r requirements.txt
 
----
+2. Start the dashboard:
+   
+   streamlit run app/dashboard.py
 
-## Installation
-
-Clone the repository:
-
-git clone https://github.com/the-duru/smart-decision-support.git
-
-cd smart-decision-support
-
-Create and activate environment (Anaconda recommended):
-
-conda create -n decision python=3.10  
-conda activate decision
-
-Install dependencies:
-
-pip install -r requirements.txt
+The dashboard will open automatically in your browser.
 
 ---
 
-## Run the Dashboard
+## Project Goal
 
-streamlit run app/dashboard.py
+The goal of this project is to simulate a real-world business analytics tool that helps managers:
 
-Then open in your browser:
-
-http://localhost:8501
-
----
-
-## Example Use Case
-
-This system can be used by:
-
-- Business analysts
-- Data teams
-- Managers
-
-to monitor sales performance, analyze product trends, and estimate future revenue.
+- Monitor sales performance
+- Analyze product and region trends
+- Estimate future revenue
 
 ---
 
@@ -95,3 +59,4 @@ to monitor sales performance, analyze product trends, and estimate future revenu
 
 Duru Macit  
 Computer Engineering Student
+
