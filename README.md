@@ -1,28 +1,40 @@
-\# Smart Decision Support System (Python)
+# Smart Decision Support System
 
+A mini decision support platform that analyzes historical sales data, computes key performance indicators (KPIs), and provides a simple revenue forecast through an interactive dashboard.
 
+This project demonstrates how raw business data can be transformed into actionable insights for management-level decision making.
 
-A decision support mini-platform that:
+---
 
-\- computes KPIs from historical sales data
+## Features
 
-\- visualizes insights in a Streamlit dashboard
+- KPI calculation (total revenue, best-selling product, etc.)
+- Region and product-based filtering
+- Interactive Streamlit dashboard
+- Baseline revenue forecasting using machine learning
+- Clean and modular Python project structure
 
-\- provides a simple baseline revenue forecast
+---
 
+## Dataset
 
+Dataset: Superstore Sales Dataset (Kaggle)  
+Type: Open retail dataset  
+Usage: Educational and portfolio purposes only
 
-\## Tech Stack
+The dataset is used to simulate real-world business analytics scenarios.
 
-Python, Pandas, Scikit-learn, Streamlit
+---
 
+## Tech Stack
 
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Streamlit
 
-\## Run
+---
 
-pip install -r requirements.txt
-
-streamlit run app/dashboard.py
-
-
+## Project Structure
 
